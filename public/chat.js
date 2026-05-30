@@ -228,3 +228,31 @@ function consumeSseEvents(buffer) {
 	}
 	return { events, buffer: normalized };
 }
+
+// Theme toggle logic
+(function initThemeToggle() {
+	const themeToggle = document.getElementById("theme-toggle");
+	const htmlEl = document.documentElement;
+	const STORAGE_KEY = "llm-chat-theme";
+
+	function setTheme(theme) {
+		htmlEl.setAttribute("data-theme", theme);
+		localStorage.setItem(STORAGE_KEY, theme);
+		// Sun for light mode, moon for dark mode
+		themeToggle.innerHTML = theme === "light" ? "&#9728;" : "&#9790;";
+		themeToggle.setAttribute(
+			"aria-label",
+			theme === "light" ? "Switch to dark theme" : "Switch to light theme",
+		);
+	}
+
+	// Load saved theme or default to light
+	const savedTheme = localStorage.getItem(STORAGE_KEY) || "light";
+	setTheme(savedTheme);
+
+	// Toggle on click
+	themeToggle.addEventListener("click", function () {
+		const current = htmlEl.getAttribute("data-theme");
+		setTheme(current === "light" ? "dark" : "light");
+	});
+})();
