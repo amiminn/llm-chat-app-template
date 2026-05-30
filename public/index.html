@@ -72,6 +72,10 @@
 				max-width: 800px;
 				margin: 0 auto;
 				padding: 1rem;
+				min-height: 100vh;
+				min-height: 100dvh;
+				display: flex;
+				flex-direction: column;
 				transition: background-color 0.3s ease, color 0.3s ease;
 			}
 
@@ -133,8 +137,8 @@
 			.chat-container {
 				display: flex;
 				flex-direction: column;
-				height: calc(100vh - 220px);
-				min-height: 400px;
+				flex: 1;
+				min-height: 0;
 				border: var(--border-width) solid var(--border-color);
 				border-radius: var(--radius-lg);
 				box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
