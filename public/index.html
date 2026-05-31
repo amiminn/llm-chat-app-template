@@ -4,6 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>LLM Chat App</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+			rel="stylesheet"
+		/>
 		<style>
 			:root {
 				--primary: #FFD700;
@@ -72,6 +78,10 @@
 				max-width: 800px;
 				margin: 0 auto;
 				padding: 1rem;
+				min-height: 100vh;
+				min-height: 100dvh;
+				display: flex;
+				flex-direction: column;
 				transition: background-color 0.3s ease, color 0.3s ease;
 			}
 
@@ -94,8 +104,9 @@
 			}
 
 			h1 {
+				font-family: "Space Grotesk", "Inter", sans-serif;
 				font-size: 1.6rem;
-				font-weight: 900;
+				font-weight: 700;
 				color: #000000;
 				letter-spacing: -0.5px;
 			}
@@ -133,8 +144,8 @@
 			.chat-container {
 				display: flex;
 				flex-direction: column;
-				height: calc(100vh - 220px);
-				min-height: 400px;
+				flex: 1;
+				min-height: 0;
 				border: var(--border-width) solid var(--border-color);
 				border-radius: var(--radius-lg);
 				box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--shadow-color);
@@ -220,8 +231,10 @@
 				border-radius: var(--radius-md);
 				box-shadow: 3px 3px 0px var(--shadow-color);
 				cursor: pointer;
+				font-family: "Space Grotesk", "Inter", sans-serif;
 				font-weight: 700;
 				font-size: 0.95rem;
+				letter-spacing: 0.3px;
 				transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.3s ease;
 			}
 
